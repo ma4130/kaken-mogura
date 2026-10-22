@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600;700&display=swap');
+
+:root { color-scheme: dark; font-family: 'Roboto Mono', monospace; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #1b0e08; color: #f4fff9; }
+button { font: inherit; }
+main { width: 100%; height: 100%; display: grid; grid-template-rows: 72px minmax(0, 1fr); padding: 14px; gap: 14px; }
+header { display: flex; align-items: center; justify-content: space-between; padding: 0 22px; border: 1px solid rgba(89,243,213,.3); border-radius: 16px; background: #27160e; }
+h1 { margin: 0; font-size: clamp(18px, 2vw, 30px); letter-spacing: .12em; }
+.status { display: flex; align-items: center; gap: 12px; color: #96b8b2; }
+.status i { width: 12px; aspect-ratio: 1; border-radius: 50%; background: #96b8b2; box-shadow: 0 0 12px currentColor; }
+.status[data-state="ready"] { color: #59f3d5; }
+.status[data-state="error"] { color: #ff557f; }
+.status[data-state="ready"] i { background: #59f3d5; }
+.status[data-state="error"] i { background: #ff557f; }
+.workspace { min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 340px); gap: 14px; }
+.preview { position: relative; min-width: 0; min-height: 0; overflow: hidden; border: 2px solid rgba(89,243,213,.35); border-radius: 18px; background: #050201; }
+video, canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+canvas { z-index: 2; }
+#emptyState { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; color: #725442; font-size: clamp(28px, 6vw, 90px); font-weight: 700; letter-spacing: .14em; }
+.controls { min-height: 0; display: grid; align-content: start; gap: 14px; overflow-y: auto; }
+.controls section { display: grid; gap: 10px; padding: 18px; border: 1px solid rgba(89,243,213,.24); border-radius: 16px; background: #27160e; }
+.controls h2 { margin: 0 0 4px; font-size: 16px; letter-spacing: .08em; }
+.controls p { min-height: 3em; margin: 4px 0 0; color: #96b8b2; font-size: 12px; line-height: 1.5; }
+.controls button { min-height: 48px; border: 1px solid rgba(89,243,213,.32); border-radius: 10px; color: #f4fff9; background: rgba(89,243,213,.07); cursor: pointer; }
+.controls button:hover, .controls button:focus-visible { border-color: #59f3d5; background: rgba(89,243,213,.15); outline: none; }
+.controls button.primary { border-color: #59f3d5; color: #061519; background: #59f3d5; font-weight: 700; }
+.controls button:disabled { cursor: default; opacity: .38; }
+body[data-camera-state="calibrating"] canvas { cursor: crosshair; }
+
+@media (max-width: 760px) {
+  .workspace { grid-template-columns: 1fr; grid-template-rows: minmax(260px, 1fr) auto; }
+  .controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+

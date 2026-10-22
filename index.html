@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#061519" />
+    <meta name="description" content="床へ投影し、足で踏んで遊ぶモグラたたきゲーム" />
+    <link rel="icon" href="/src/assets/mole-character.png" type="image/png" />
+    <title>FUMI FUMI MOGURA｜床投影モグラたたき</title>
+  </head>
+  <body>
+    <main id="game" class="game" data-phase="idle">
+      <section id="playfield" class="playfield" aria-label="9つのモグラ穴">
+        <div class="field-grid" aria-hidden="true"></div>
+
+        <div class="holes" id="holes">
+          <div class="hole" data-hole="0" style="--x: 18%; --y: 20%" role="img" aria-label="左奥の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="1" style="--x: 50%; --y: 20%" role="img" aria-label="中央奥の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="2" style="--x: 82%; --y: 20%" role="img" aria-label="右奥の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="3" style="--x: 18%; --y: 50%" role="img" aria-label="左中央の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="4" style="--x: 50%; --y: 50%" role="img" aria-label="中央の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="5" style="--x: 82%; --y: 50%" role="img" aria-label="右中央の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="6" style="--x: 18%; --y: 80%" role="img" aria-label="左手前の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="7" style="--x: 50%; --y: 80%" role="img" aria-label="中央手前の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+          <div class="hole" data-hole="8" style="--x: 82%; --y: 80%" role="img" aria-label="右手前の穴">
+            <span class="target-ring"></span><span class="pit"></span>
+            <span class="mole"><mark>★</mark></span>
+          </div>
+        </div>
+
+        <div id="footLayer" class="foot-layer" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <dialog id="setupDialog" class="setup-dialog" aria-labelledby="setupTitle">
+      <header>
+        <div><h2 id="setupTitle">設定</h2></div>
+        <button id="closeSetupButton" class="close-button" type="button" aria-label="設定を閉じる">×</button>
+      </header>
+
+      <div class="setup-scroll">
+        <section class="setup-section camera-section">
+          <div class="section-heading">
+            <div><h3>カメラ画角</h3></div>
+            <span id="cameraBadge" class="badge" data-state="off">OFF</span>
+          </div>
+          <div class="camera-preview" id="cameraPreview">
+            <video id="cameraVideo" muted playsinline></video>
+            <canvas id="cameraCanvas" aria-label="カメラ映像。投影範囲の4隅を順にクリックして調整します"></canvas>
+            <div id="cameraPlaceholder"><span>CAMERA PREVIEW</span></div>
+          </div>
+          <div class="camera-status"><span id="cameraStatusLight"></span><p id="cameraStatus">カメラは停止中です</p></div>
+          <div class="button-row">
+            <button id="cameraStartButton" class="primary-button" type="button">カメラを開始</button>
+            <button id="cameraResetButton" class="secondary-button" type="button">4点調整をやり直す</button>
+            <button id="cameraStopButton" class="secondary-button" type="button">停止</button>
+          </div>
+        </section>
+
+        <nav class="setup-actions" aria-label="その他の設定">
+          <button id="soundButton" class="secondary-button" type="button" aria-pressed="true"><span aria-hidden="true">♪</span><b>音 ON</b></button>
+          <button id="monitorButton" class="secondary-button" type="button"><span aria-hidden="true">◉</span><b>専用操作画面</b></button>
+          <button id="fullscreenButton" class="secondary-button" type="button"><span aria-hidden="true">⛶</span><b>全画面</b></button>
+        </nav>
+      </div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+

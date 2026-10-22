@@ -73,8 +73,8 @@ src/camera-foot-tracker.js MediaPipe足認識
 src/audio.js               Web Audio効果音
 src/main.js                画面とカメラ入力の統合
 src/monitor.js             別画面の認識モニター
-src/assets/soil-texture.png 実写調の土テクスチャ
-src/assets/mole-character.png 3Dモグラ素材
+src/assets/soil-texture.webp 実写調の土テクスチャ
+src/assets/mole-character.webp 3Dモグラ素材
 ```
 
 `main` ブランチへのpushで、GitHub Actionsがテスト・ビルドを行いGitHub Pagesへ公開します。

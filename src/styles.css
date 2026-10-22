@@ -40,7 +40,7 @@ button { color: inherit; }
   touch-action: none;
   background:
     linear-gradient(rgba(34, 14, 5, .12), rgba(34, 14, 5, .28)),
-    url('./assets/soil-texture.png') center / cover no-repeat;
+    url('./assets/soil-texture.webp') center / cover no-repeat;
 }
 
 .field-grid { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 35%, rgba(26, 10, 3, .34) 100%); }
@@ -52,7 +52,7 @@ button { color: inherit; }
 .pit::after { content: ''; position: absolute; inset: 12% 16%; border-radius: 50%; background: #010607; box-shadow: inset 0 1.2vmin 1.4vmin #000; }
 .target-ring { position: absolute; z-index: 1; inset: -2% 0 5%; border: clamp(4px, .45vmin, 9px) solid rgba(89,243,213,.0); border-radius: 50%; transform: scale(.72); opacity: 0; }
 
-.mole { position: absolute; z-index: 2; left: 16%; bottom: 17%; width: 68%; height: 88%; background: url('./assets/mole-character.png') center bottom / contain no-repeat; filter: drop-shadow(0 1.4vmin 1vmin rgba(25,8,2,.48)); transform: translateY(83%) scale(.7); transform-origin: 50% 100%; opacity: 0; transition: transform .18s cubic-bezier(.2,1.1,.35,1), opacity .1s; overflow: visible; }
+.mole { position: absolute; z-index: 2; left: 16%; bottom: 17%; width: 68%; height: 88%; background: url('./assets/mole-character.webp') center bottom / contain no-repeat; filter: drop-shadow(0 1.4vmin 1vmin rgba(25,8,2,.48)); transform: translateY(83%) scale(.7); transform-origin: 50% 100%; opacity: 0; transition: transform .18s cubic-bezier(.2,1.1,.35,1), opacity .1s; overflow: visible; }
 .mole mark { display: none; position: absolute; right: -14%; top: -8%; width: 38%; aspect-ratio: 1; place-items: center; border-radius: 50%; background: #fff; color: #9c6500; font-size: clamp(18px, 3.2vmin, 48px); box-shadow: 0 0 2vmin var(--gold); }
 .hole.is-up .mole { transform: translateY(0) scale(1); opacity: 1; }
 .hole.is-up .target-ring { opacity: 1; border-color: rgba(89,243,213,.92); animation: target-pulse 1.15s ease-in-out infinite; }

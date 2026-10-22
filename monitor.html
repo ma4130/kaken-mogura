@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1b0e08" />
+    <link rel="icon" href="/src/assets/mole-character.png" type="image/png" />
+    <link rel="stylesheet" href="/src/monitor.css" />
+    <title>専用操作画面｜FUMI FUMI MOGURA</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>CONTROL PANEL</h1>
+        <div class="status"><i id="statusLight"></i><strong id="statusText">CONNECTING</strong></div>
+      </header>
+      <div class="workspace">
+        <section class="preview">
+          <video id="monitorVideo" muted autoplay playsinline></video>
+          <canvas id="monitorCanvas" aria-label="カメラ映像と足認識オーバーレイ"></canvas>
+          <div id="emptyState">NO CAMERA</div>
+        </section>
+
+        <aside class="controls" aria-label="ゲーム設定">
+          <section>
+            <h2>カメラ</h2>
+            <button id="cameraStartButton" class="primary" type="button">開始</button>
+            <button id="cameraResetButton" type="button">4点調整</button>
+            <button id="cameraStopButton" type="button">停止</button>
+            <p id="calibrationStatus">投影範囲を確認できます</p>
+          </section>
+          <section>
+            <h2>投影画面</h2>
+            <button id="soundButton" type="button">音 ON</button>
+            <button id="fullscreenButton" type="button">全画面</button>
+            <button id="settingsButton" type="button">設定を表示</button>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <script type="module" src="/src/monitor.js"></script>
+  </body>
+</html>
+
